@@ -8,18 +8,14 @@ namespace comic_book_gallery.Controllers
 {
     public class ComicBooksController : Controller
     {
-        // GET: ComicBooks
-        public ActionResult Detail ()
-        {
-            if (DateTime.Today.DayOfWeek == DayOfWeek.Monday)
+        //Method return type ActionResult is almost always used
+       public ActionResult Detail ()
+       {
+            if (DateTime.Today.DayOfWeek == DayOfWeek.Tuesday)
             {
                 return new RedirectResult("/");
             }
-            return new ContentResult()
-            {
-                Content = "Hello from the comic books control"
-
-            };
-        }
+            return Content("Hello form the comic books control");
+       }
     }
 }
